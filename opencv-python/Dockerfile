@@ -13,5 +13,6 @@ RUN apt-get install -y --no-install-recommends\
     rm -rf /var/lib/apt/lists/*
 
 RUN pip3 --no-cache-dir install  opencv-contrib-python 
+RUN pip3 install --upgrade pip
 
 CMD ["/bin/bash"]

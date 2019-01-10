@@ -17,6 +17,7 @@ RUN apt-get install -y --no-install-recommends \
         python3-pip
 
 RUN pip3 --no-cache-dir install  opencv-contrib-python
+RUN pip3 install --upgrade
 
 # installing OpenVINO dependencies
 RUN cd /app/l_openvino_toolkit* && \
