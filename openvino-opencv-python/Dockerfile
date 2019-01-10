@@ -14,10 +14,11 @@ RUN apt-get install -y --no-install-recommends \
         lsb-release \
         pciutils \
         python3.5 \
-        python3-pip
+        python3-pip \
+        sudo
 
 RUN pip3 --no-cache-dir install  opencv-contrib-python
-RUN pip3 install --upgrade
+RUN pip3 install --upgrade pip
 
 # installing OpenVINO dependencies
 RUN cd /app/l_openvino_toolkit* && \
