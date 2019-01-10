@@ -118,15 +118,4 @@ RUN mkdir /opencv-$OPENCV_VERSION/cmake_binary \
     && rm -rf /opencv-$OPENCV_VERSION
 ########OPENCV END
 
-# installing OpenVINO dependencies
-RUN cd /app/l_openvino_toolkit* && \
-    ./install_cv_sdk_dependencies.sh
-
-## installing OpenVINO itself
-RUN cd /app/l_openvino_toolkit* && \
-    sed -i 's/decline/accept/g' silent.cfg && \
-    ./install.sh --silent silent.cfg
-
-RUN /bin/bash -c "source $INSTALL_DIR/bin/setupvars.sh"
-
 CMD ["/bin/bash"]
