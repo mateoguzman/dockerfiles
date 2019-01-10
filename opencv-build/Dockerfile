@@ -38,7 +38,7 @@ ENV OPENCV_VERSION="4.0.0"
 RUN wget https://github.com/opencv/opencv/archive/${OPENCV_VERSION}.zip \
 && unzip ${OPENCV_VERSION}.zip \
 && mkdir /opencv-${OPENCV_VERSION}/cmake_binary \
-&& cd /opencv-${OPENCV_VERSION}/cmake_binary \i
+&& cd /opencv-${OPENCV_VERSION}/cmake_binary \
 && cmake \
 -DBUILD_DOCS=NO \
 -DBUILD_EXAMPLES=OFF \
@@ -84,7 +84,7 @@ RUN wget https://github.com/opencv/opencv/archive/${OPENCV_VERSION}.zip \
 -DWITH_V4L=ON \
 -DWITH_WEBP=ON \
 .. \
-$$ make -j$(nproc)
+&& make -j$(nproc) \
 && make install \
 && rm /${OPENCV_VERSION}.zip \
 && rm -r /opencv-${OPENCV_VERSION} 
